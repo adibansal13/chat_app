@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mx-3">
+      <h1 class="text-4xl my-2">New Chat</h1>
+      <form action="/chat/new" method="post">
+        <label for="">From: </label>
+        <input
+          type="text"
+          name="from"
+          class="my-3 bg-blue-200 rounded-lg"
+          required
+        />
+        <br />
+        <label for="">To: </label>
+        <input
+          type="text"
+          name="to"
+          class="my-3 bg-blue-200 rounded-lg"
+          required
+        /><br />
+        <br />
+        <label for="">Message: </label>
+        <textarea
+          name="msg"
+          id=""
+          class="my-3 bg-blue-200 rounded-lg"
+          required
+        ></textarea
+        ><br /><br />
+        <button class="px-3 py-1 bg-red-400 m-2 rounded-lg text-white">
+          Submit
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

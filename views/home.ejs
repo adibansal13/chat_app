@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat App</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container px-3">
+      <h1 class="text-4xl my-3">Chat APP</h1>
+      <div>
+        <a href="/chat/new" class="bg-blue-400 text-white px-3 py-1 rounded-lg"
+          >Add Chat</a
+        >
+      </div>
+      <% for(let chat of chats){%>
+      <div class="msg bg-red-200 w-3xs p-3 my-5 rounded-xl">
+        <h3>From : <%=chat.from%></h3>
+        <h3>to : <%=chat.to%></h3>
+        <p>Msg: <%=chat.msg%></p>
+        <a href="/chat/<%=chat._id %>/edit" class="px-3 py-1 bg-red-400 m-2 rounded-lg text-white">
+          Edit
+        </a>
+        <form method="post" action="/chat/<%=chat._id%>/delete?_method=DELETE">
+
+            <button class="px-3 py-1 bg-red-400 m-2 rounded-lg text-white">
+                Delete
+            </button>
+        </form>
+      </div>
+      <%}%>
+    </div>
+  </body>
+</html>
